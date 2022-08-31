@@ -1,0 +1,6 @@
+package com.novare.atm.util;
+
+public enum MenuContext {
+
+	SIGNUP,LOGIN,VIEWBALANCE,WITHDRAWMONEY,TRANSFERMONEY,DEPOSITMONEY,LOGOUT;
+}
