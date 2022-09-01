@@ -1,5 +1,5 @@
 package com.novare.atm.action;
 
-public class LoginAction {
+public class WithdrawMenuAction {
 
 }

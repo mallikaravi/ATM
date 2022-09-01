@@ -1,5 +1,24 @@
 package com.novare.atm.view;
 
-public class MainView {
+import java.util.List;
+
+import com.novare.atm.util.PrintHandler;
+
+public class MainView extends BaseView {
+
+	public MainView(String title) {
+		super(title);
+	}
+
+	@Override
+	public List<String> getMenuOptions() {
+		return null;
+	}
+
+	public void printNavigationMenu() {
+		PrintHandler.optionQuit();
+	}
 
 }
+
+
