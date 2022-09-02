@@ -19,4 +19,20 @@ public class WelcomeView extends BaseView {
 		PrintHandler.optionQuit();
 	}
 
+	public String askUserFullName() {
+		printMessage("Enter User full name:");
+		return getUserText();
+
+	}
+	public String askUserName() {
+		printMessage("Enter User name:");
+		return getUserText();
+
+	}
+	public String askUserPassword() {
+		printMessage("Enter Password:");
+		return getUserText();
+
+	}
+
 }

@@ -4,9 +4,16 @@ import com.novare.atm.action.BankMenuAction;
 import com.novare.atm.action.LogOutMenuAction;
 import com.novare.atm.action.UserMenuAction;
 import com.novare.atm.model.User;
+import com.novare.atm.service.IMainService;
 import com.novare.atm.service.IWelcomeService;
 
-public class MainServiceImpl implements IWelcomeService {
+public class MainServiceImpl implements IMainService {
+
+	@Override
+	public boolean isValidUser(User current) throws Exception {
+		// TODO Auto-generated method stub
+		return false;
+	}
 
 	@Override
 	public void handleOption(int selectedOption, User currentUser) throws Exception {
@@ -25,12 +32,6 @@ public class MainServiceImpl implements IWelcomeService {
 			default -> throw new IndexOutOfBoundsException();
 		}
 
-	}
-
-	@Override
-	public boolean isValidUser(User current) throws Exception {
-		// TODO Auto-generated method stub
-		return false;
 	}
 
 }

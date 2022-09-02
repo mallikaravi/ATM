@@ -10,12 +10,6 @@ import com.novare.atm.service.IUserService;
 public class UserServiceImpl implements IUserService {
 
 	@Override
-	public User createUser(User user) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
 	public User deleteUser(User user) {
 		// TODO Auto-generated method stub
 		return null;
@@ -35,20 +29,20 @@ public class UserServiceImpl implements IUserService {
 
 	public void handleOption(int selectedOption, User currentUser) throws Exception {
 		switch (selectedOption) {
-		case 0 -> {
-			new MainMenuAction(currentUser);
-		}
-		case 1 -> {
-			new UpdateUserAction(currentUser);
-		}
-		case 2 -> {
-			new DeleteUserAction(currentUser);
-		}
-		case 3 -> {
-			new UpdatePasswordAction(currentUser);
-		}
+			case 0 -> {
+				new MainMenuAction(currentUser);
+			}
+			case 1 -> {
+				new UpdateUserAction(currentUser);
+			}
+			case 2 -> {
+				new DeleteUserAction(currentUser);
+			}
+			case 3 -> {
+				new UpdatePasswordAction(currentUser);
+			}
 
-		default -> throw new IndexOutOfBoundsException();
+			default -> throw new IndexOutOfBoundsException();
 		}
 
 	}
@@ -58,5 +52,7 @@ public class UserServiceImpl implements IUserService {
 		// TODO Auto-generated method stub
 		return false;
 	}
+
+	
 
 }

@@ -5,7 +5,6 @@ import java.util.Scanner;
 
 import com.novare.atm.util.PrintHandler;
 
-
 public abstract class BaseView {
 	private final Scanner scanner;
 
@@ -105,6 +104,21 @@ public abstract class BaseView {
 		}
 	}
 
+	public String getUserText() {
+		try {
+			String input = getUserTerminal().nextLine();
+			if (input.isEmpty()) {
+				throw new IllegalArgumentException();
+			}
+			return input;
+		} catch (Exception exception) {
+			printInvalidOption();
+			printUserRequest();
+			return getUserText();
+		}
+
+	}
+
 	public int getSelectedOptionFromMenu(int menuItems) {
 		try {
 			int selection = askUserToChooseIndexFromList();
@@ -117,4 +131,5 @@ public abstract class BaseView {
 			return getSelectedOptionFromMenu(menuItems);
 		}
 	}
+
 }
