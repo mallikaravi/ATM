@@ -1,11 +1,11 @@
 package com.novare.atm.service.impl;
 
-import com.novare.atm.action.BankMenuAction;
-import com.novare.atm.action.LogOutMenuAction;
+import com.novare.atm.action.TransactionMenuAction;
 import com.novare.atm.action.UserMenuAction;
+import com.novare.atm.action.WelcomeMenuAction;
 import com.novare.atm.model.User;
 import com.novare.atm.service.IMainService;
-import com.novare.atm.service.IWelcomeService;
+import com.novare.atm.util.MenuContext;
 
 public class MainServiceImpl implements IMainService {
 
@@ -19,17 +19,17 @@ public class MainServiceImpl implements IMainService {
 	public void handleOption(int selectedOption, User currentUser) throws Exception {
 
 		switch (selectedOption) {
-			case 0 -> {
-				new LogOutMenuAction(currentUser);
-			}
-			case 1 -> {
-				new UserMenuAction(currentUser);
-			}
-			case 2 -> {
-				new BankMenuAction(currentUser);
-			}
+		case 0 -> {
+			new WelcomeMenuAction(MenuContext.LOGOUT, currentUser);
+		}
+		case 1 -> {
+			new UserMenuAction(MenuContext.USER, currentUser);
+		}
+		case 2 -> {
+			new TransactionMenuAction(MenuContext.TRANSACTION, currentUser);
+		}
 
-			default -> throw new IndexOutOfBoundsException();
+		default -> throw new IndexOutOfBoundsException();
 		}
 
 	}

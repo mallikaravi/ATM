@@ -1,26 +1,20 @@
 package com.novare.atm.action;
 
-import com.novare.atm.controller.WelcomeController;
+import com.novare.atm.controller.MainController;
 import com.novare.atm.model.User;
-import com.novare.atm.service.IWelcomeService;
-import com.novare.atm.service.impl.WelcomeServiceImpl;
+import com.novare.atm.service.IMainService;
+import com.novare.atm.service.impl.MainServiceImpl;
 import com.novare.atm.util.MenuContext;
-import com.novare.atm.view.WelcomeView;
+import com.novare.atm.view.MainView;
 
-public class MainMenuAction extends BaseMenuAction{
+public class MainMenuAction extends BaseMenuAction {
 
-	public MainMenuAction(User currentUser) throws Exception {
+	public MainMenuAction(MenuContext context, User currentUser) throws Exception {
 		super(currentUser);
-		WelcomeView view = new WelcomeView("Welcome to ABC Bank ATM");
-		IWelcomeService model = new WelcomeServiceImpl();
-		WelcomeController controller = new WelcomeController(model, view);
-		controller.requestUserInput(MenuContext.WELCOME, currentUser);
-		}
-	
-
-	
-
-	
-	
+		MainView view = new MainView("Main Menu:");
+		IMainService model = new MainServiceImpl();
+		MainController controller = new MainController(model, view);
+		controller.requestUserInput(context, currentUser);
+	}
 
 }

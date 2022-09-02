@@ -6,7 +6,7 @@ import com.novare.atm.util.MenuContext;
 import com.novare.atm.view.WelcomeView;
 
 public class WelcomeController extends BaseController {
-	private User newUser;
+	private User newUser = new User();
 
 	public WelcomeController(IWelcomeService model, WelcomeView view) {
 		super(model, view);
@@ -24,19 +24,18 @@ public class WelcomeController extends BaseController {
 		try {
 			int selectedOption = 0;
 			switch (context) {
-				case SIGNUP -> {
-					createUser();
-					selectedOption = 2;
-				}
-				case LOGIN -> {
-					login();
-					selectedOption =3;
-				}
-
-				default -> {
-					super.requestUserInput(context, currentUser);
-					selectedOption = getView().getUserInput();
-				}
+			case SIGNUP -> {
+				createUser();
+				selectedOption = 2;
+			}
+			case LOGIN -> {
+				login();
+				selectedOption = 3;
+			}
+			default -> {
+				super.requestUserInput(context, currentUser);
+				selectedOption = getView().getUserInput();
+			}
 			}
 			getModel().handleOption(selectedOption, currentUser);
 		} catch (Exception e) {
@@ -56,7 +55,6 @@ public class WelcomeController extends BaseController {
 			newUser.setPassWord(getView().askUserPassword());
 		}
 		getModel().login(newUser);
-	
 
 	}
 
@@ -71,7 +69,7 @@ public class WelcomeController extends BaseController {
 			newUser.setPassWord(getView().askUserPassword());
 		}
 		getModel().createUser(newUser);
-		
+
 	}
 
 }

@@ -9,12 +9,15 @@ import com.novare.atm.view.WelcomeView;
 
 public class WelcomeMenuAction extends BaseMenuAction {
 
-	public WelcomeMenuAction(User currentUser) throws Exception {
-		super(currentUser);
+	public WelcomeMenuAction(MenuContext context, User currentUser) throws Exception {
+		super(context, currentUser);
 		WelcomeView view = new WelcomeView("Welcome to ABC Bank ATM");
 		IWelcomeService model = new WelcomeServiceImpl();
 		WelcomeController controller = new WelcomeController(model, view);
-		controller.requestUserInput(MenuContext.WELCOME, currentUser);
+		if (context == null) {
+			context = MenuContext.WELCOME;
+		}
+		controller.requestUserInput(context, currentUser);
 
 	}
 }
