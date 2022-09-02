@@ -1,22 +1,22 @@
-	package com.novare.atm.view;
+package com.novare.atm.view;
 
 import java.util.List;
 
 import com.novare.atm.util.PrintHandler;
 
-public class UserView extends BaseView {
+public class WelcomeView extends BaseView {
 
-	public UserView(String title) {
+	public WelcomeView(String title) {
 		super(title);
 	}
 
 	@Override
 	public List<String> getMenuOptions() {
-		return null;
+		return List.of("SignUp", "Login");
 	}
 
 	public void printNavigationMenu() {
-		PrintHandler.optionBackToMainMenu();
+		PrintHandler.optionQuit();
 	}
 
 }

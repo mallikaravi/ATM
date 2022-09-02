@@ -1,40 +1,15 @@
 package com.novare.atm.service;
 
-import com.novare.atm.model.Bank;
 import com.novare.atm.model.User;
 
-public interface IUserService extends IBankService {
+public interface IUserService extends IBaseService {
 
-	/**
-	 * This is the method to view the balance
-	 * 
-	 * @param bank
-	 * @return
-	 */
-	User viewBalance(Bank bank);
+	User createUser(User user);
 
-	/**
-	 * This is the method to withdraw cash from the bank
-	 * 
-	 * @param bank
-	 * @return
-	 */
-	User withdrawMoney(Bank bank);
+	User deleteUser(User user);
 
-	/**
-	 * THis is the method to deposit cash
-	 * 
-	 * @param bank
-	 * @return
-	 */
-	User depositMoney(Bank bank);
+	User updateUser(User user);
 
-	/**
-	 * This method is used to transfer cash from one account to another
-	 * 
-	 * @param bank
-	 * @return
-	 */
-	User transferMoney(Bank bank);
+	User updatePassword(User user);
 
 }

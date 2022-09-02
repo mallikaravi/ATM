@@ -1,5 +1,12 @@
 package com.novare.atm.action;
 
-public class TransferMenuAction {
+import com.novare.atm.model.User;
+
+public class TransferMenuAction  extends BaseMenuAction{
+
+	public TransferMenuAction(User currentUser) {
+		super(currentUser);
+		// TODO Auto-generated constructor stub
+	}
 
 }
