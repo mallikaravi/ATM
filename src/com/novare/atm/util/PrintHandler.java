@@ -16,6 +16,10 @@ public class PrintHandler {
 		System.out.println(); // on purpose to make a space between the title
 	}
 
+	public static void optionLogout() {
+		System.out.println("[0] Logout");
+	}
+
 	public static void optionQuit() {
 		System.out.println("[0] Quit");
 	}

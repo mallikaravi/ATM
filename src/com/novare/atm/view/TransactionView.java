@@ -12,13 +12,32 @@ public class TransactionView extends BaseView {
 
 	@Override
 	public List<String> getMenuOptions() {
-		return null;
+		return List.of("View Balance","Deposit","Withdraw","Transfer");
 	}
 
 	public void printNavigationMenu() {
-		PrintHandler.optionQuit();
+		PrintHandler.optionBackToMainMenu();
 	}
-
+	public  boolean askUserDeposit() {
+		printMessage("Do you want to deposit money [Yes/No]:");
+		return askConfirmationYesOrNo();
+		
+	}
+	public  boolean askUserViewBalance() {
+		printMessage("Do you want to view [Yes/No]:");
+		return askConfirmationYesOrNo();
+		
+	}
+	public  boolean askUserWithdraw() {
+		printMessage("Do you want to withdraw money [Yes/No]:");
+		return askConfirmationYesOrNo();
+		
+	}
+	public  boolean askUserTransfer() {
+		printMessage("Do you want to transfer money [Yes/No]:");
+		return askConfirmationYesOrNo();
+		
+	}
 }
 
 

@@ -11,7 +11,7 @@ public interface ITransactionService extends IBaseService {
 	 * @param transaction
 	 * @return
 	 */
-	Transaction viewBalance(Transaction transaction);
+	Transaction viewBalance(Transaction transaction) throws Exception;
 
 	/**
 	 * This is the method to withdraw cash from the bank
@@ -19,7 +19,8 @@ public interface ITransactionService extends IBaseService {
 	 * @param bank
 	 * @return
 	 */
-	Transaction withdrawMoney(Transaction transaction);
+	Transaction withdrawMoney(Transaction transaction)throws Exception;
+
 
 	/**
 	 * THis is the method to deposit cash
@@ -27,7 +28,8 @@ public interface ITransactionService extends IBaseService {
 	 * @param transaction
 	 * @return
 	 */
-	Transaction depositMoney(Transaction transaction);
+	Transaction depositMoney(Transaction transaction)throws Exception;
+
 
 	/**
 	 * This method is used to transfer cash from one account to another
@@ -35,6 +37,7 @@ public interface ITransactionService extends IBaseService {
 	 * @param transaction
 	 * @return
 	 */
-	Transaction transferMoney(Transaction transaction);
+	Transaction transferMoney(Transaction transaction)throws Exception;
+
 
 }

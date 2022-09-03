@@ -1,5 +1,7 @@
 package com.novare.atm.model;
 
+import java.util.Objects;
+
 public class User {
 	private int id;
 	private String fullName;
@@ -7,7 +9,6 @@ public class User {
 	private String passWord;
 
 	public User() {
-
 	}
 
 	public User(int id, String fullName, String userName, String passWord) {
@@ -74,14 +75,30 @@ public class User {
 		this.passWord = passWord;
 	}
 
-	/* (non-Javadoc)
+	@Override
+	public int hashCode() {
+		return Objects.hash(userName);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (obj instanceof String) {
+			String name = (String) obj;
+			return this.userName.equals(name);
+		}
+		User user = (User) obj;
+		return this.getUserName().equals(user.getUserName());
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Object#toString()
 	 */
-	
+
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", fullName=" + fullName + ", userName=" + userName + ", passWord=" + passWord + "]";
 	}
 
-	
 }

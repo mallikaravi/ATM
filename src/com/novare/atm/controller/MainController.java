@@ -23,17 +23,8 @@ public class MainController extends BaseController {
 
 	public void requestUserInput(MenuContext context, User currentUser) throws Exception {
 		try {
-			int selectedOption = 0;
-			switch (context) {
-			case USER -> {
-			}
-			case TRANSACTION -> {
-			}
-			default -> {
-				super.requestUserInput(context, currentUser);
-				selectedOption = getView().getUserInput();
-			}
-			}
+			super.requestUserInput(context, currentUser);
+			int selectedOption = getView().getUserInput();
 			getModel().handleOption(selectedOption, currentUser);
 		} catch (Exception e) {
 			getView().printInvalidOption();

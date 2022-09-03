@@ -132,4 +132,16 @@ public abstract class BaseView {
 		}
 	}
 
+	public String askUserName() {
+		printMessage("Enter User name:");
+		return getUserText();
+
+	}
+
+	public String askUserPassword() {
+		printMessage("Enter Password:");
+		return getUserText();
+
+	}
+
 }

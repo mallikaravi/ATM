@@ -1,5 +1,7 @@
 package com.novare.atm.controller;
 
+import javax.security.sasl.AuthenticationException;
+
 import com.novare.atm.model.User;
 import com.novare.atm.service.IBaseService;
 import com.novare.atm.util.MenuContext;
@@ -10,6 +12,7 @@ public class BaseController {
 	private IBaseService model;
 	private BaseView view;
 	private boolean menuVisible;
+	private User userSession;
 
 	public BaseController(IBaseService model, BaseView view) {
 		setModel(model);
@@ -17,7 +20,25 @@ public class BaseController {
 		setMenuVisible(true);
 	}
 
+	/**
+	 * @return the currentUser
+	 */
+	public User getUserSession() {
+		return userSession;
+	}
+
+	/**
+	 * @param currentUser the currentUser to set
+	 */
+	public void setUserSession(User currentUser) {
+		this.userSession = currentUser;
+	}
+
 	public void requestUserInput(MenuContext context, User currentUser) throws Exception {
+		setUserSession(currentUser);
+		if (currentUser != null && !getModel().isValidUser(currentUser)) {
+			throw new AuthenticationException();
+		}
 		if (isMenuVisible()) {
 			getView().setMenuOptions(getView().getMenuOptions());
 			getView().printUserRequest();

@@ -9,15 +9,17 @@ public class MainView extends BaseView {
 	public MainView(String title) {
 		super(title);
 	}
+	
 
 	@Override
 	public List<String> getMenuOptions() {
-		return null;
+		return List.of("User Profile","ATM Transactions");
 	}
 
 	public void printNavigationMenu() {
-		PrintHandler.optionQuit();
+		PrintHandler.optionLogout();
 	}
+	
 
 }
 

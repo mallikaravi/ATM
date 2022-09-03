@@ -1,5 +1,7 @@
 package com.novare.atm.controller;
 
+import javax.security.sasl.AuthenticationException;
+
 import com.novare.atm.model.User;
 import com.novare.atm.service.IWelcomeService;
 import com.novare.atm.util.MenuContext;
@@ -22,22 +24,29 @@ public class WelcomeController extends BaseController {
 
 	public void requestUserInput(MenuContext context, User currentUser) throws Exception {
 		try {
+			super.requestUserInput(context, currentUser);
 			int selectedOption = 0;
 			switch (context) {
-			case SIGNUP -> {
-				createUser();
-				selectedOption = 2;
+				case SIGNUP -> {
+					createUser();
+					selectedOption = 2;
+				}
+				case LOGIN -> {
+					try {
+						login();
+						selectedOption = 3;
+					} catch (AuthenticationException e) {
+						selectedOption = 4;
+					}
+				}
+				case LOGOUT -> {
+					selectedOption = 4;
+				}
+				default -> {
+					selectedOption = getView().getUserInput();
+				}
 			}
-			case LOGIN -> {
-				login();
-				selectedOption = 3;
-			}
-			default -> {
-				super.requestUserInput(context, currentUser);
-				selectedOption = getView().getUserInput();
-			}
-			}
-			getModel().handleOption(selectedOption, currentUser);
+			getModel().handleOption(selectedOption, getUserSession());
 		} catch (Exception e) {
 			getView().printInvalidOption();
 			getView().printUserRequest();
@@ -47,23 +56,34 @@ public class WelcomeController extends BaseController {
 
 	}
 
-	private void login() {
+	private void login() throws Exception {
 		if (newUser.getUserName() == null) {
 			newUser.setUserName(getView().askUserName());
 		}
 		if (newUser.getPassWord() == null) {
 			newUser.setPassWord(getView().askUserPassword());
 		}
-		getModel().login(newUser);
+		User login = getModel().login(newUser);
+		if (login == null) {
+			if (getView().askForSignUp()) {
+				throw new AuthenticationException();
+			}
+		}
+		setUserSession(login);
 
 	}
 
-	private void createUser() {
+	private void createUser() throws Exception {
 		if (newUser.getFullName() == null) {
 			newUser.setFullName(getView().askUserFullName());
 		}
+
 		if (newUser.getUserName() == null) {
 			newUser.setUserName(getView().askUserName());
+			if (getModel().isValidUser(newUser)) {
+				newUser.setUserName("");
+				throw new Exception("User Already exist !");
+			}
 		}
 		if (newUser.getPassWord() == null) {
 			newUser.setPassWord(getView().askUserPassword());

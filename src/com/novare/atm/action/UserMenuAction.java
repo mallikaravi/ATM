@@ -14,7 +14,7 @@ public class UserMenuAction extends BaseMenuAction {
 		UserView view = new UserView("User Profile Menu:");
 		IUserService model = new UserServiceImpl();
 		UserController controller = new UserController(model, view);
-
+		controller.setMenuVisible(context == MenuContext.USER);
 		controller.requestUserInput(context, currentUser);
 
 	}

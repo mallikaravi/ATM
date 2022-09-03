@@ -16,7 +16,10 @@ public class WelcomeMenuAction extends BaseMenuAction {
 		WelcomeController controller = new WelcomeController(model, view);
 		if (context == null) {
 			context = MenuContext.WELCOME;
+		} else if (context == MenuContext.LOGIN) {
+			view.setTitle("Login menu options:");
 		}
+		controller.setMenuVisible(context == MenuContext.WELCOME);
 		controller.requestUserInput(context, currentUser);
 
 	}

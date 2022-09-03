@@ -6,11 +6,6 @@ import com.novare.atm.util.MenuContext;
 public abstract class BaseMenuAction {
 	private User currentUser;
 
-	public BaseMenuAction(User currentUser) {
-		super();
-		this.currentUser = currentUser;
-	}
-
 	public BaseMenuAction(MenuContext context, User currentUser) {
 		super();
 		this.currentUser = currentUser;

@@ -24,15 +24,14 @@ public class WelcomeView extends BaseView {
 		return getUserText();
 
 	}
-	public String askUserName() {
-		printMessage("Enter User name:");
-		return getUserText();
 
-	}
-	public String askUserPassword() {
-		printMessage("Enter Password:");
-		return getUserText();
-
+	public boolean askForSignUp() {
+		printMessage("Do you want to SignUp [Yes/No]:");
+		if (!askConfirmationYesOrNo()) {
+			printMessage("Bye !");
+			System.exit(0);
+		}
+		return true;
 	}
 
 }

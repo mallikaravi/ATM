@@ -10,10 +10,12 @@ import com.novare.atm.view.MainView;
 public class MainMenuAction extends BaseMenuAction {
 
 	public MainMenuAction(MenuContext context, User currentUser) throws Exception {
-		super(currentUser);
-		MainView view = new MainView("Main Menu:");
+		super(context, currentUser);
+		String fullName = currentUser == null ? ":" : ", Hello " + currentUser.getFullName();
+		MainView view = new MainView("Main Menu" + fullName);
 		IMainService model = new MainServiceImpl();
 		MainController controller = new MainController(model, view);
+		controller.setMenuVisible(context == MenuContext.MAIN);
 		controller.requestUserInput(context, currentUser);
 	}
 

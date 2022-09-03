@@ -10,7 +10,7 @@ import com.novare.atm.view.TransactionView;
 public class TransactionMenuAction extends BaseMenuAction {
 
 	public TransactionMenuAction(MenuContext context, User currentUser) throws Exception {
-		super(currentUser);
+		super(context, currentUser);
 		TransactionView view = new TransactionView("Transaction Menu:");
 		ITransactionService model = new TransactionServiceImpl();
 		TransactionController controller = new TransactionController(model, view);

@@ -1,4 +1,4 @@
-	package com.novare.atm.view;
+package com.novare.atm.view;
 
 import java.util.List;
 
@@ -12,11 +12,18 @@ public class UserView extends BaseView {
 
 	@Override
 	public List<String> getMenuOptions() {
-		return null;
+		return List.of("Edit Profile", "Change Password", "Delete Profile");
 	}
 
 	public void printNavigationMenu() {
 		PrintHandler.optionBackToMainMenu();
 	}
+
+	public boolean askUserDeletion() {
+		printMessage("Do you want to delete the current user [Yes/No]:");
+		return askConfirmationYesOrNo();
+	}
+
+	
 
 }
