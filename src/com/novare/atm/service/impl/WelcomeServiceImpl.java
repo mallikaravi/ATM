@@ -14,9 +14,9 @@ public class WelcomeServiceImpl extends BaseServiceImpl implements IWelcomeServi
 
 	@Override
 	public User createUser(User user) throws Exception {
-		ServiceUtil.isAssetExist();
+		ServiceUtil.checkAssetFolder();
 		List<User> users = ServiceUtil.loadUsers();
-		user.setPassWord(ServiceUtil.encrypt(user.getPassWord()));
+		user.setPassWord(user.getPassWord());
 		Account account = new Account();
 		user.setAccount(account);
 		users.add(user);
@@ -29,7 +29,7 @@ public class WelcomeServiceImpl extends BaseServiceImpl implements IWelcomeServi
 		List<User> users = ServiceUtil.loadUsers();
 		for (User cache : users) {
 			boolean userName = cache.getUserName().equals(user.getUserName());
-			boolean password = cache.getPassWord().equals(ServiceUtil.encrypt(user.getPassWord()));
+			boolean password = cache.getPassWord().equals(user.getPassWord());
 			if (userName && password) {
 				return cache;
 			}

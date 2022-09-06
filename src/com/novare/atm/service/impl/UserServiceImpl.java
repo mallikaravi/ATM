@@ -31,6 +31,7 @@ public class UserServiceImpl extends BaseServiceImpl implements IUserService {
 				iterator.remove();
 			}
 		}
+		user.setPassWord(user.getPassWord());
 		users.add(user);
 		ServiceUtil.saveUsers(users);
 		return user;

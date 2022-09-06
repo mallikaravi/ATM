@@ -18,7 +18,7 @@ public class ATMApp {
 		try {
 			new WelcomeMenuAction(MenuContext.WELCOME, currentUser);
 		} catch (Exception e) {
-			e.printStackTrace();
+			System.out.println("Error, Not able to run the application !\n Due to the " + e.getMessage());
 		}
 	}
 

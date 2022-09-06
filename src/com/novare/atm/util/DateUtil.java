@@ -1,16 +1,12 @@
 package com.novare.atm.util;
 
 import java.text.ParseException;
-import java.time.DayOfWeek;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
-import java.time.format.TextStyle;
-import java.time.temporal.WeekFields;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
-import java.util.Locale;
 
 /**
  * This is Date helper class to convert the Date into different formats.
@@ -20,7 +16,7 @@ import java.util.Locale;
  */
 public final class DateUtil {
 
-	public final static String DATE_FORMAT_PATTERN = "dd-MM-yyyy hh:mm:ss";
+	public final static String DATE_FORMAT_PATTERN = "dd-MM-yyyy HH:mm:ss";
 
 	private DateUtil() {
 	}
@@ -29,19 +25,23 @@ public final class DateUtil {
 		return LocalDate.ofInstant(date.toInstant(), ZoneId.systemDefault());
 	}
 
-	public static Date toDate(LocalDate date) {
-		return Date.from(date.atStartOfDay(ZoneId.systemDefault()).toInstant());
+	public static Date toDate(LocalDateTime date) {
+		return Date.from(date.atZone(ZoneId.systemDefault()).toInstant());
 	}
 
-	public static LocalDate toDate(String dateAsString) throws ParseException {
-		return LocalDate.parse(dateAsString, DateTimeFormatter.ofPattern(DATE_FORMAT_PATTERN));
+	public static LocalDateTime toDate(String dateAsString) throws ParseException {
+		return LocalDateTime.parse(dateAsString, DateTimeFormatter.ofPattern(DATE_FORMAT_PATTERN));
 	}
 
-	public static String toString(LocalDate date) throws ParseException {
+	public static String toString(LocalDateTime date) throws ParseException {
 		return date.format(DateTimeFormatter.ofPattern(DATE_FORMAT_PATTERN));
 	}
 
 	public static String getNow() throws ParseException {
-		return toString(LocalDate.now());
+		return toString(LocalDateTime.now());
+	}
+
+	public static String toString(Date date) {
+		return new SimpleDateFormat(DATE_FORMAT_PATTERN).format(date);
 	}
 }

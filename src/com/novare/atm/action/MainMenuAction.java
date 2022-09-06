@@ -11,7 +11,7 @@ public class MainMenuAction extends BaseMenuAction {
 
 	public MainMenuAction(MenuContext context, User currentUser) throws Exception {
 		super(context, currentUser);
-		String fullName = currentUser == null ? ":" : ", Hello " + currentUser.getFullName();
+		String fullName = currentUser == null ? ":" : ", Hello " + currentUser.getFullName()+" !";
 		MainView view = new MainView("Main Menu" + fullName);
 		IMainService model = new MainServiceImpl();
 		MainController controller = new MainController(model, view);

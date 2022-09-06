@@ -50,7 +50,7 @@ public class ServiceUtil {
 		return encryptedHash.toString();
 	}
 
-	public static boolean isAssetExist() throws Exception {
+	public static boolean checkAssetFolder() throws Exception {
 		if (Files.exists(Paths.get("assets"))) {
 			return true;
 		}

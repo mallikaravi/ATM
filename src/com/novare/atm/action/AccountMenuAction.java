@@ -11,7 +11,15 @@ public class AccountMenuAction extends BaseMenuAction {
 
 	public AccountMenuAction(MenuContext context, User currentUser) throws Exception {
 		super(context, currentUser);
-		AccountView view = new AccountView("Transaction Menu Options:");
+		String title = "";
+		switch (context) {
+			case VIEW_BALANCE -> title = "Last 10 Transactions:";
+			case WITHDRAW_MONEY -> title = "Withdraw option:";
+			case DEPOSIT_MONEY -> title = "Deposit option:";
+			case TRANSFER_MONEY -> title = "Transfer your money:";
+			default -> title = "Transaction Menu Options:";
+		}
+		AccountView view = new AccountView(title);
 		IAccountService model = new AccountServiceImpl();
 		AccountController controller = new AccountController(model, view);
 		controller.setMenuVisible(context == MenuContext.ACCOUNT);

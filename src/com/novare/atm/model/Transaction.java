@@ -1,11 +1,11 @@
 package com.novare.atm.model;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 import com.novare.atm.util.DateUtil;
 
-public class Transaction {
+public class Transaction implements Comparable<Transaction> {
 	private TransactionType transactionType;
 	private double amount;
 	private String senderName;
@@ -16,9 +16,10 @@ public class Transaction {
 
 	public Transaction(TransactionType transactionType, double amount) {
 		super();
-		this.date = DateUtil.toDate(LocalDate.now());
+		this.date = DateUtil.toDate(LocalDateTime.now());
 		this.transactionType = transactionType;
 		this.amount = amount;
+		this.senderName = "Self";
 	}
 
 	/**
@@ -68,6 +69,11 @@ public class Transaction {
 	 */
 	public Date getDate() {
 		return date;
+	}
+
+	@Override
+	public int compareTo(Transaction transaction) {
+		return transaction.getDate().compareTo(getDate());
 	}
 
 }

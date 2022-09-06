@@ -32,8 +32,9 @@ public class AccountView extends BaseView {
 		}
 	}
 
-	public void showBalance(double balance) {
-		printMessage("Available balance: " + balance);
+	public void showBalance(String text) {
+		System.out.printf(text);
+
 	}
 
 	public double askWithdrawAmount() {

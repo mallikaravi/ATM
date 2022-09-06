@@ -7,6 +7,7 @@ import javax.security.sasl.AuthenticationException;
 import com.novare.atm.model.User;
 import com.novare.atm.service.IWelcomeService;
 import com.novare.atm.util.MenuContext;
+import com.novare.atm.util.ServiceUtil;
 import com.novare.atm.view.WelcomeView;
 
 public class WelcomeController extends BaseController {
@@ -66,7 +67,7 @@ public class WelcomeController extends BaseController {
 			newUser.setUserName(getView().askUserName());
 		}
 		if (newUser.getPassWord() == null) {
-			newUser.setPassWord(getView().askUserPassword());
+			newUser.setPassWord(ServiceUtil.encrypt(getView().askUserPassword()));
 		}
 		User login = getModel().login(newUser);
 		if (login == null) {
@@ -91,7 +92,7 @@ public class WelcomeController extends BaseController {
 			}
 		}
 		if (newUser.getPassWord() == null) {
-			newUser.setPassWord(getView().askUserPassword());
+			newUser.setPassWord(ServiceUtil.encrypt(getView().askUserPassword()));
 		}
 		getModel().createUser(newUser);
 

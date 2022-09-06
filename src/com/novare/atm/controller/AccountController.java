@@ -88,7 +88,6 @@ public class AccountController extends BaseController {
 	private void withdrawMoney() throws Exception {
 		double withdrawAmount = getView().askWithdrawAmount();
 		Transaction transaction = new Transaction(TransactionType.WITHDRAW, withdrawAmount);
-		transaction.setSenderName(getUserSession().getUserName());
 		Account account = getUserSession().getAccount();
 		if (withdrawAmount > account.getBalance()) {
 			throw new InsufficientResourcesException();
@@ -102,7 +101,6 @@ public class AccountController extends BaseController {
 	private void depositMoney() throws Exception {
 		double depositAmount = getView().askUserDepositAmount();
 		Transaction transaction = new Transaction(TransactionType.DEPOSIT, depositAmount);
-		transaction.setSenderName(getUserSession().getUserName());
 		Account account = getUserSession().getAccount();
 		account.setBalance(account.getBalance() + depositAmount);
 		account.addTransaction(transaction);
@@ -112,7 +110,7 @@ public class AccountController extends BaseController {
 
 	private void viewBalance() throws Exception {
 		Account account = getUserSession().getAccount();
-		getView().showBalance(account.getBalance());
+		getView().showBalance(String.format(account.printTransactions(), getUserSession().getFullName()));
 		getView().waitForDecision();
 	}
 

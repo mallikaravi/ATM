@@ -3,6 +3,7 @@ package com.novare.atm.controller;
 import com.novare.atm.model.User;
 import com.novare.atm.service.IUserService;
 import com.novare.atm.util.MenuContext;
+import com.novare.atm.util.ServiceUtil;
 import com.novare.atm.view.UserView;
 
 public class UserController extends BaseController {
@@ -60,7 +61,7 @@ public class UserController extends BaseController {
 	private void changePassword() throws Exception {
 		String askUserPasswordToChange = getView().askUserPassword();
 		if (!askUserPasswordToChange.isEmpty()) {
-			getUserSession().setPassWord(askUserPasswordToChange);
+			getUserSession().setPassWord(ServiceUtil.encrypt(askUserPasswordToChange));
 		}
 		getModel().updatePassword(getUserSession());
 	}
@@ -72,7 +73,7 @@ public class UserController extends BaseController {
 		}
 		String askUserPasswordToChange = getView().askUserPassword();
 		if (!askUserPasswordToChange.isEmpty()) {
-			getUserSession().setPassWord(askUserPasswordToChange);
+			getUserSession().setPassWord(ServiceUtil.encrypt(askUserPasswordToChange));
 		}
 		getModel().updateUser(getUserSession());
 	}

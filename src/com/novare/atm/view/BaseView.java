@@ -44,12 +44,10 @@ public abstract class BaseView {
 
 	public String readPassword() {
 		Console console = System.console();
-
 		if (console == null) {
-			System.out.println("No console available");
-			return "";
+			printMessage("Enter Password: ");
+			return getUserText();
 		}
-
 		char[] pwd = console.readPassword("Enter Password: ");
 		return new String(pwd);
 	}
@@ -93,9 +91,9 @@ public abstract class BaseView {
 	}
 
 	public void waitForDecision() {
-		printMessage("");
-		printMessage("[C] Continue");
-		printMessage("[Q] Quit");
+		printMessage("\n\n");
+		printMessage("[C] Continue\n");
+		printMessage("[Q] Quit\n");
 		printMessage("Options: ");
 		boolean wait = false;
 		while (!wait) {
