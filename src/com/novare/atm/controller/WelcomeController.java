@@ -1,5 +1,7 @@
 package com.novare.atm.controller;
 
+import java.io.FileNotFoundException;
+
 import javax.security.sasl.AuthenticationException;
 
 import com.novare.atm.model.User;
@@ -47,6 +49,9 @@ public class WelcomeController extends BaseController {
 				}
 			}
 			getModel().handleOption(selectedOption, getUserSession());
+		} catch (FileNotFoundException e) {
+			getView().printMessage(e.getMessage());
+			getView().goodBye();
 		} catch (Exception e) {
 			getView().printInvalidOption();
 			getView().printUserRequest();

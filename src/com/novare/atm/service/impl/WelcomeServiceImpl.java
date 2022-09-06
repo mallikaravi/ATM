@@ -4,22 +4,21 @@ import java.util.List;
 
 import com.novare.atm.action.MainMenuAction;
 import com.novare.atm.action.WelcomeMenuAction;
+import com.novare.atm.model.Account;
 import com.novare.atm.model.User;
 import com.novare.atm.service.IWelcomeService;
 import com.novare.atm.util.MenuContext;
 import com.novare.atm.util.ServiceUtil;
 
-public class WelcomeServiceImpl implements IWelcomeService {
-
-	@Override
-	public boolean isValidUser(User current) throws Exception {
-		List<User> users = ServiceUtil.loadUsers();
-		return users.contains(current);
-	}
+public class WelcomeServiceImpl extends BaseServiceImpl implements IWelcomeService {
 
 	@Override
 	public User createUser(User user) throws Exception {
+		ServiceUtil.isAssetExist();
 		List<User> users = ServiceUtil.loadUsers();
+		user.setPassWord(ServiceUtil.encrypt(user.getPassWord()));
+		Account account = new Account();
+		user.setAccount(account);
 		users.add(user);
 		ServiceUtil.saveUsers(users);
 		return user;
@@ -29,7 +28,9 @@ public class WelcomeServiceImpl implements IWelcomeService {
 	public User login(User user) throws Exception {
 		List<User> users = ServiceUtil.loadUsers();
 		for (User cache : users) {
-			if (cache.getUserName().equalsIgnoreCase(user.getUserName())) {
+			boolean userName = cache.getUserName().equals(user.getUserName());
+			boolean password = cache.getPassWord().equals(ServiceUtil.encrypt(user.getPassWord()));
+			if (userName && password) {
 				return cache;
 			}
 		}
@@ -38,7 +39,6 @@ public class WelcomeServiceImpl implements IWelcomeService {
 
 	@Override
 	public void handleOption(int selectedOption, User currentUser) throws Exception {
-
 		switch (selectedOption) {
 			case 0 -> {
 				System.exit(0);
@@ -58,7 +58,5 @@ public class WelcomeServiceImpl implements IWelcomeService {
 
 			default -> throw new IndexOutOfBoundsException();
 		}
-
 	}
-
 }

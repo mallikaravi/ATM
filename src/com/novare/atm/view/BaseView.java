@@ -1,5 +1,6 @@
 package com.novare.atm.view;
 
+import java.io.Console;
 import java.util.List;
 import java.util.Scanner;
 
@@ -37,6 +38,22 @@ public abstract class BaseView {
 		return scanner;
 	}
 
+	public void goodBye() {
+		System.exit(0);
+	}
+
+	public String readPassword() {
+		Console console = System.console();
+
+		if (console == null) {
+			System.out.println("No console available");
+			return "";
+		}
+
+		char[] pwd = console.readPassword("Enter Password: ");
+		return new String(pwd);
+	}
+
 	public void printSaveMessage() {
 		System.out.println("Data successfully Saved/Updated");
 	}
@@ -50,7 +67,7 @@ public abstract class BaseView {
 	}
 
 	public void printMessage(String message) {
-		System.out.println(message);
+		System.out.print(message);
 	}
 
 	public boolean askConfirmationYesOrNo() {
@@ -77,9 +94,9 @@ public abstract class BaseView {
 
 	public void waitForDecision() {
 		printMessage("");
-		printMessage("Options:");
 		printMessage("[C] Continue");
 		printMessage("[Q] Quit");
+		printMessage("Options: ");
 		boolean wait = false;
 		while (!wait) {
 			String input = getUserTerminal().nextLine();
@@ -133,15 +150,23 @@ public abstract class BaseView {
 	}
 
 	public String askUserName() {
-		printMessage("Enter User name:");
+		printMessage("Enter User name: ");
 		return getUserText();
 
 	}
 
 	public String askUserPassword() {
-		printMessage("Enter Password:");
-		return getUserText();
-
+		try {
+			String input = readPassword();
+			if (input.isEmpty()) {
+				throw new IllegalArgumentException();
+			}
+			return input;
+		} catch (Exception exception) {
+			printInvalidOption();
+			printUserRequest();
+			return readPassword();
+		}
 	}
 
 }

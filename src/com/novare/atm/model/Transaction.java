@@ -1,29 +1,24 @@
 package com.novare.atm.model;
 
+import java.time.LocalDate;
+import java.util.Date;
+
+import com.novare.atm.util.DateUtil;
+
 public class Transaction {
-	private User user;
 	private TransactionType transactionType;
 	private double amount;
-	
-	public Transaction(User user, TransactionType transactionType, double amount) {
+	private String senderName;
+	private Date date;
+
+	public Transaction() {
+	}
+
+	public Transaction(TransactionType transactionType, double amount) {
 		super();
-		this.user = user;
+		this.date = DateUtil.toDate(LocalDate.now());
 		this.transactionType = transactionType;
 		this.amount = amount;
-	}
-
-	/**
-	 * @return the user
-	 */
-	public User getUser() {
-		return user;
-	}
-
-	/**
-	 * @param user the user to set
-	 */
-	public void setUser(User user) {
-		this.user = user;
 	}
 
 	/**
@@ -53,7 +48,26 @@ public class Transaction {
 	public void setAmount(double amount) {
 		this.amount = amount;
 	}
-	
-	
+
+	/**
+	 * @return the senderName
+	 */
+	public String getSenderName() {
+		return senderName;
+	}
+
+	/**
+	 * @param senderName the senderName to set
+	 */
+	public void setSenderName(String senderName) {
+		this.senderName = senderName;
+	}
+
+	/**
+	 * @return the date
+	 */
+	public Date getDate() {
+		return date;
+	}
 
 }

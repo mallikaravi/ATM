@@ -1,8 +1,11 @@
 package com.novare.atm.util;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.security.MessageDigest;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,12 +16,16 @@ import com.novare.atm.model.User;
 
 public class ServiceUtil {
 
+	private ServiceUtil() {
+	}
+
 	public static List<User> loadUsers() {
 		List<User> users = new ArrayList<>();
 		try {
 			ObjectMapper mapper = new ObjectMapper();
+			mapper.setDateFormat(new SimpleDateFormat(DateUtil.DATE_FORMAT_PATTERN));
 			CollectionType javaType = mapper.getTypeFactory().constructCollectionType(List.class, User.class);
-			users = mapper.readValue(Paths.get("assets/users.json").toFile(), javaType);
+			users = mapper.readValue(Paths.get("assets/atm.json").toFile(), javaType);
 			return users;
 		} catch (Exception e) {
 			return users;
@@ -27,8 +34,26 @@ public class ServiceUtil {
 
 	public static void saveUsers(List<User> users) throws JsonProcessingException, IOException {
 		ObjectMapper mapper = new ObjectMapper();
+		mapper.setDateFormat(new SimpleDateFormat(DateUtil.DATE_FORMAT_PATTERN));
 		String json = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(users);
-		Files.write(Paths.get("assets/users.json"), json.getBytes());
+		Files.write(Paths.get("assets/atm.json"), json.getBytes());
 	}
 
+	public static String encrypt(String password) throws Exception {
+		MessageDigest messageDigest = MessageDigest.getInstance("SHA-256");
+		messageDigest.update(password.getBytes());
+		byte[] digest = messageDigest.digest();
+		StringBuilder encryptedHash = new StringBuilder();
+		for (byte b : digest) {
+			encryptedHash.append(String.format("%02x", b));
+		}
+		return encryptedHash.toString();
+	}
+
+	public static boolean isAssetExist() throws Exception {
+		if (Files.exists(Paths.get("assets"))) {
+			return true;
+		}
+		throw new FileNotFoundException("Asset Folder doesn't exist, Bye !");
+	}
 }

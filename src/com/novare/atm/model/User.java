@@ -7,6 +7,7 @@ public class User {
 	private String fullName;
 	private String userName;
 	private String passWord;
+	private Account account;
 
 	public User() {
 	}
@@ -73,6 +74,20 @@ public class User {
 	 */
 	public void setPassWord(String passWord) {
 		this.passWord = passWord;
+	}
+
+	/**
+	 * @return the account
+	 */
+	public Account getAccount() {
+		return account;
+	}
+
+	/**
+	 * @param account the account to set
+	 */
+	public void setAccount(Account account) {
+		this.account = account;
 	}
 
 	@Override

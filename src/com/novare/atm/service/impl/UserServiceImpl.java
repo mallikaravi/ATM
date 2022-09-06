@@ -11,13 +11,7 @@ import com.novare.atm.service.IUserService;
 import com.novare.atm.util.MenuContext;
 import com.novare.atm.util.ServiceUtil;
 
-public class UserServiceImpl implements IUserService {
-
-	@Override
-	public boolean isValidUser(User current) throws Exception {
-		List<User> users = ServiceUtil.loadUsers();
-		return users.contains(current);
-	}
+public class UserServiceImpl extends BaseServiceImpl implements IUserService {
 
 	@Override
 	public User deleteUser(User user) throws Exception {
@@ -33,7 +27,7 @@ public class UserServiceImpl implements IUserService {
 		Iterator<User> iterator = users.iterator();
 		while (iterator.hasNext()) {
 			User next = iterator.next();
-			if (next.getFullName().equalsIgnoreCase(user.getFullName())) {
+			if (next.getFullName().equals(user.getFullName())) {
 				iterator.remove();
 			}
 		}
@@ -67,5 +61,4 @@ public class UserServiceImpl implements IUserService {
 			default -> throw new IndexOutOfBoundsException();
 		}
 	}
-
 }

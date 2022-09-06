@@ -7,4 +7,6 @@ public interface IBaseService {
 
 	boolean isValidUser(User current) throws Exception;
 
+	User findByUserName(String userName) throws Exception;
+
 }

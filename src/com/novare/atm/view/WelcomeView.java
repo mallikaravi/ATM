@@ -20,18 +20,17 @@ public class WelcomeView extends BaseView {
 	}
 
 	public String askUserFullName() {
-		printMessage("Enter User full name:");
+		printMessage("Enter User full name: ");
 		return getUserText();
 
 	}
 
 	public boolean askForSignUp() {
-		printMessage("Do you want to SignUp [Yes/No]:");
+		printMessage("Do you want to SignUp [Yes/No]: ");
 		if (!askConfirmationYesOrNo()) {
 			printMessage("Bye !");
-			System.exit(0);
+			goodBye();
 		}
 		return true;
 	}
-
 }

@@ -20,7 +20,7 @@ public class UserView extends BaseView {
 	}
 
 	public boolean askUserDeletion() {
-		printMessage("Do you want to delete the current user [Yes/No]:");
+		printMessage("Do you want to delete the current user [Yes/No]: ");
 		return askConfirmationYesOrNo();
 	}
 

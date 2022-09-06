@@ -63,3 +63,4 @@ recipe-manager.umlcd
 recipe-manager.umlcd
 *.umlcd
 *.~vsdx
+*.jar

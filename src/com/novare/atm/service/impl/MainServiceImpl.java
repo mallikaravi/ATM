@@ -2,7 +2,7 @@ package com.novare.atm.service.impl;
 
 import java.util.List;
 
-import com.novare.atm.action.TransactionMenuAction;
+import com.novare.atm.action.AccountMenuAction;
 import com.novare.atm.action.UserMenuAction;
 import com.novare.atm.action.WelcomeMenuAction;
 import com.novare.atm.model.User;
@@ -10,7 +10,7 @@ import com.novare.atm.service.IMainService;
 import com.novare.atm.util.MenuContext;
 import com.novare.atm.util.ServiceUtil;
 
-public class MainServiceImpl implements IMainService {
+public class MainServiceImpl extends BaseServiceImpl implements IMainService {
 
 	@Override
 	public boolean isValidUser(User current) throws Exception {
@@ -20,7 +20,6 @@ public class MainServiceImpl implements IMainService {
 
 	@Override
 	public void handleOption(int selectedOption, User currentUser) throws Exception {
-
 		switch (selectedOption) {
 			case 0 -> {
 				new WelcomeMenuAction(MenuContext.LOGOUT, currentUser);
@@ -29,12 +28,10 @@ public class MainServiceImpl implements IMainService {
 				new UserMenuAction(MenuContext.USER, currentUser);
 			}
 			case 2 -> {
-				new TransactionMenuAction(MenuContext.TRANSACTION, currentUser);
+				new AccountMenuAction(MenuContext.ACCOUNT, currentUser);
 			}
 
 			default -> throw new IndexOutOfBoundsException();
 		}
-
 	}
-
 }
