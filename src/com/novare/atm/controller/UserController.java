@@ -12,14 +12,17 @@ public class UserController extends BaseController {
 		super(model, view);
 	}
 
+	@Override
 	public IUserService getModel() {
 		return (IUserService) super.getModel();
 	}
 
+	@Override
 	public UserView getView() {
 		return (UserView) super.getView();
 	}
 
+	@Override
 	public void requestUserInput(MenuContext context, User currentUser) throws Exception {
 		try {
 			super.requestUserInput(context, currentUser);
@@ -34,12 +37,14 @@ public class UserController extends BaseController {
 					selectedOption = 4;
 				}
 				case DELETE_USER -> {
-					deleteUser();
-					setUserSession(null);
-					selectedOption = 4;
+					if (deleteUser()) {
+						setUserSession(null);
+						selectedOption = 4;
+					}
 				}
 				default -> {
-					selectedOption = getView().getUserInput();
+					int option = getView().getUserInput();
+					selectedOption = option;
 				}
 			}
 			getModel().handleOption(selectedOption, getUserSession());
@@ -51,11 +56,14 @@ public class UserController extends BaseController {
 		}
 	}
 
-	private void deleteUser() throws Exception {
+	private boolean deleteUser() throws Exception {
 		boolean askConfirmation = getView().askUserDeletion();
 		if (askConfirmation) {
 			getModel().deleteUser(getUserSession());
+			getView().printSuccessMessage();
+			return true;
 		}
+		return false;
 	}
 
 	private void changePassword() throws Exception {
@@ -64,6 +72,8 @@ public class UserController extends BaseController {
 			getUserSession().setPassWord(ServiceUtil.encrypt(askUserPasswordToChange));
 		}
 		getModel().updatePassword(getUserSession());
+		getView().printSuccessMessage();
+		getView().waitForDecision();
 	}
 
 	private void updateProfile() throws Exception {
@@ -76,6 +86,9 @@ public class UserController extends BaseController {
 			getUserSession().setPassWord(ServiceUtil.encrypt(askUserPasswordToChange));
 		}
 		getModel().updateUser(getUserSession());
+		getView().printSuccessMessage();
+		getView().waitForDecision();
+
 	}
 
 }

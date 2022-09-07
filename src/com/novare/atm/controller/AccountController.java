@@ -16,34 +16,32 @@ public class AccountController extends BaseController {
 		super(model, view);
 	}
 
+	@Override
 	public IAccountService getModel() {
 		return (IAccountService) super.getModel();
 	}
 
+	@Override
 	public AccountView getView() {
 		return (AccountView) super.getView();
 	}
 
+	@Override
 	public void requestUserInput(MenuContext context, User currentUser) throws Exception {
 		try {
 			super.requestUserInput(context, currentUser);
 			int selectedOption = 0;
 			switch (context) {
-				case VIEW_BALANCE -> {
-					viewBalance();
-				}
-				case DEPOSIT_MONEY -> {
-					depositMoney();
-				}
-				case WITHDRAW_MONEY -> {
-					withdrawMoney();
-				}
-				case TRANSFER_MONEY -> {
-					transferMoney();
-				}
+				case VIEW_BALANCE -> viewBalance();
+
+				case DEPOSIT_MONEY -> depositMoney();
+
+				case WITHDRAW_MONEY -> withdrawMoney();
+
+				case TRANSFER_MONEY -> transferMoney();
+
 				default -> {
-					selectedOption = getView().getUserInput();
-				}
+					selectedOption = getView().getUserInput();}
 			}
 			getModel().handleOption(selectedOption, getUserSession());
 		} catch (Exception e) {
@@ -59,10 +57,10 @@ public class AccountController extends BaseController {
 		User sender = getModel().findByUserName(senderName);
 		if (sender == null) {
 			getView().printMessage("User Not Found");
-			throw new Exception("User Not Found");
+			throw new NullPointerException();
 		}
 		double transferAmount = getView().askTransferAmount();
-
+		
 		// This is the withdraw transaction type to withdraw money from our account
 		Transaction transaction = new Transaction(TransactionType.TRANSFER, transferAmount);
 		transaction.setSenderName(sender.getUserName());
@@ -82,6 +80,7 @@ public class AccountController extends BaseController {
 		senderAccount.setBalance(senderAccount.getBalance() + transferAmount);
 		senderAccount.addTransaction(transaction);
 		getModel().updateUser(sender);
+		getView().printTransferSuccessMessage();
 		getView().waitForDecision();
 	}
 
@@ -95,6 +94,7 @@ public class AccountController extends BaseController {
 		account.setBalance(account.getBalance() - withdrawAmount);
 		account.addTransaction(transaction);
 		getModel().updateUser(getUserSession());
+		getView().printWithdrawSuccessMessage();
 		getView().waitForDecision();
 	}
 
@@ -105,10 +105,11 @@ public class AccountController extends BaseController {
 		account.setBalance(account.getBalance() + depositAmount);
 		account.addTransaction(transaction);
 		getModel().updateUser(getUserSession());
+		getView().printDepositSuccessMessage();
 		getView().waitForDecision();
 	}
 
-	private void viewBalance() throws Exception {
+	private void viewBalance() {
 		Account account = getUserSession().getAccount();
 		getView().showBalance(String.format(account.printTransactions(), getUserSession().getFullName()));
 		getView().waitForDecision();

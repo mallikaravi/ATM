@@ -72,4 +72,13 @@ public class AccountView extends BaseView {
 		}
 		return amount;
 	}
+	public void printDepositSuccessMessage() {
+		printMessage("Successfully Deposited!");
+	}
+	public void printTransferSuccessMessage() {
+		printMessage("Successfully Transferred!");
+	}
+	public void printWithdrawSuccessMessage() {
+		printMessage("Successfully Withdrawn!");
+	}
 }

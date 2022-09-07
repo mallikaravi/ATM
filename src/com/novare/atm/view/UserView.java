@@ -23,7 +23,7 @@ public class UserView extends BaseView {
 		printMessage("Do you want to delete the current user [Yes/No]: ");
 		return askConfirmationYesOrNo();
 	}
-
-	
-
+	public void printSuccessMessage() {
+		printMessage("Data saved successfully !");
+	}
 }

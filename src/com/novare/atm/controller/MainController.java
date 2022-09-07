@@ -13,14 +13,17 @@ public class MainController extends BaseController {
 		super(model, view);
 	}
 
+	@Override
 	public IMainService getModel() {
 		return (IMainService) super.getModel();
 	}
 
+	@Override
 	public MainView getView() {
 		return (MainView) super.getView();
 	}
 
+	@Override
 	public void requestUserInput(MenuContext context, User currentUser) throws Exception {
 		try {
 			super.requestUserInput(context, currentUser);
