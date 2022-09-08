@@ -27,15 +27,6 @@
   }
 }, {
   "id" : 0,
-  "fullName" : "Jeshitha Ravi",
-  "userName" : "ammu",
-  "passWord" : "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3",
-  "account" : {
-    "balance" : 0.0,
-    "transactions" : [ ]
-  }
-}, {
-  "id" : 0,
   "fullName" : "Kumarbabu Ravi",
   "userName" : "kumar",
   "passWord" : "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3",
@@ -225,6 +216,20 @@
       "amount" : 100.0,
       "senderName" : "kumar",
       "date" : "07-09-2022 13:55:27"
+    } ]
+  }
+}, {
+  "id" : 0,
+  "fullName" : "Jeshitha Ravi",
+  "userName" : "jeshi",
+  "passWord" : "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3",
+  "account" : {
+    "balance" : 1.0,
+    "transactions" : [ {
+      "transactionType" : "DEPOSIT",
+      "amount" : 1.0,
+      "senderName" : "Self",
+      "date" : "07-09-2022 19:50:36"
     } ]
   }
 } ]

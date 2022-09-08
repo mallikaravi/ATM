@@ -41,7 +41,8 @@ public class AccountController extends BaseController {
 				case TRANSFER_MONEY -> transferMoney();
 
 				default -> {
-					selectedOption = getView().getUserInput();}
+					selectedOption = getView().getUserInput();
+				}
 			}
 			getModel().handleOption(selectedOption, getUserSession());
 		} catch (Exception e) {
@@ -60,7 +61,7 @@ public class AccountController extends BaseController {
 			throw new NullPointerException();
 		}
 		double transferAmount = getView().askTransferAmount();
-		
+
 		// This is the withdraw transaction type to withdraw money from our account
 		Transaction transaction = new Transaction(TransactionType.TRANSFER, transferAmount);
 		transaction.setSenderName(sender.getUserName());

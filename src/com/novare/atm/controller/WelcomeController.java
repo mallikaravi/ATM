@@ -17,14 +17,17 @@ public class WelcomeController extends BaseController {
 		super(model, view);
 	}
 
+	@Override
 	public IWelcomeService getModel() {
 		return (IWelcomeService) super.getModel();
 	}
 
+	@Override
 	public WelcomeView getView() {
 		return (WelcomeView) super.getView();
 	}
 
+	@Override
 	public void requestUserInput(MenuContext context, User currentUser) throws Exception {
 		try {
 			super.requestUserInput(context, currentUser);
