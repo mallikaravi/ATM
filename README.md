@@ -12,7 +12,7 @@ $ java -jar ATM-0.0.1.jar
 
 # How to generate a jar file from Eclipse IDE
 # launch Eclipse IDE >
-   > Import porject from local drive
+   > Import project from local drive
    > Select pom.xml > Right Click > Run As > Run configuraions Dialog, Enter "clean package install" in Goals text box 
    > Select Run button
 
@@ -87,7 +87,7 @@ The following technologies are used in designing and developing the recipe manag
 2. Eclipse - IDE Purpose 
 3. Microsoft Visio - UML Diagram tool
 4. Maven - Bulding tool
-5. Jackson API-
+5. Jackson API-Parsing and saving the models
 
 Define a simple Maven Build
 ============
