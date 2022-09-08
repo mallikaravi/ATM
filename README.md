@@ -1,8 +1,8 @@
 # ATM
 
 ## Build and Generate the JAR file (compile the source code)
-
-# Git clone (download the soruce code)
+```
+#  Git clone (download the soruce code)
 $ git clone https://github.com/mallikaravi/ATM.git
 $ cd ATM
 
@@ -59,7 +59,7 @@ They are:
 1. View Balance
 2. Deposit
 3. Withdraw
-4. transfer
+4. Transfer
 
 Project setUp
 ============
@@ -78,6 +78,7 @@ https://github.com/mallikaravi/ATM/blob/main/design/Bank-ATM-Design.pdf
 ### Class Diagram 
 
 https://github.com/mallikaravi/ATM/blob/main/design/Bank-ATM-Design.pdf
+
 Technology
 ============
 The following technologies are used in designing and developing the recipe manager application.
@@ -95,7 +96,7 @@ Define a simple Maven Build
 3.Among other things, this file gives the project’s name, version, and dependencies that it has on external libraries.
 4.Create a file named pom.xml at the root of the project.
 
-Maven Dependencies
+ Dependencies
 ============
 
 ```
