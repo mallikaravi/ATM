@@ -54,7 +54,7 @@ ATM is a terminal based application.The user should first login in to the applic
 2. Change password
 3. Delete profile
 
-It is an application used for performing banking operations.
+This application is used for performing banking operations.
 
 They are:
 
