@@ -42,6 +42,10 @@ public class Account {
 		getTransactions().add(transaction);
 	}
 
+	/**
+	 * This is the method to print the transactions in a format
+	 * @return
+	 */
 	public String printTransactions() {
 
 		StringBuilder builder = new StringBuilder();
