@@ -75,16 +75,14 @@ Explained here
 https://github.com/mallikaravi/ATM/blob/main/design/Bank-ATM-Design.pdf
 
 ### Usecase Diagram: 
-
-![](design/Usecase-ATM.png)
+<img src="design/Usecase-ATM.png " width="450" height="250">
 
 ### Class Diagram 
+<img src="design/ClassDiagram-ATM.png"  width="450" height="250">
 
-![](design/ClassDiagram-ATM.png)
 
 ### Sequence Diagram 
-
-![](design/Sequence-ATM.png)
+<img src="design/Sequence-ATM.png" width="450" height="350">
 
 Technology
 ============
@@ -93,7 +91,7 @@ The following technologies are used in designing and developing the recipe manag
 1. Java – Coding language for implementing the ATM application
 2. Eclipse - IDE Purpose 
 3. Microsoft Visio - UML Diagram tool
-4. Maven - Bulding tool
+4. Maven - Building tool
 5. Jackson API-Parsing and saving the models
 
 Define a simple Maven Build
