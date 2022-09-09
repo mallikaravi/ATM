@@ -39,6 +39,12 @@ public class ServiceUtil {
 		Files.write(Paths.get("assets/atm.json"), json.getBytes());
 	}
 
+	/**
+	 * THis method is used for encryption of password.
+	 * @param password
+	 * @return
+	 * @throws Exception
+	 */
 	public static String encrypt(String password) throws Exception {
 		MessageDigest messageDigest = MessageDigest.getInstance("SHA-256");
 		messageDigest.update(password.getBytes());
