@@ -1,22 +1,13 @@
 package com.novare.atm.service.impl;
 
-import java.util.List;
-
 import com.novare.atm.action.AccountMenuAction;
 import com.novare.atm.action.UserMenuAction;
 import com.novare.atm.action.WelcomeMenuAction;
 import com.novare.atm.model.User;
 import com.novare.atm.service.IMainService;
 import com.novare.atm.util.MenuContext;
-import com.novare.atm.util.ServiceUtil;
 
 public class MainServiceImpl extends BaseServiceImpl implements IMainService {
-
-	@Override
-	public boolean isValidUser(User current) throws Exception {
-		List<User> users = ServiceUtil.loadUsers();
-		return users.contains(current);
-	}
 
 	@Override
 	public void handleOption(int selectedOption, User currentUser) throws Exception {

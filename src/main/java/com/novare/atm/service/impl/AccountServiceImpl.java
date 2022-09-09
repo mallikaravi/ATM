@@ -1,7 +1,7 @@
 package com.novare.atm.service.impl;
 
-import com.novare.atm.action.MainMenuAction;
 import com.novare.atm.action.AccountMenuAction;
+import com.novare.atm.action.MainMenuAction;
 import com.novare.atm.model.User;
 import com.novare.atm.service.IAccountService;
 import com.novare.atm.util.MenuContext;
