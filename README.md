@@ -32,9 +32,7 @@ $ java -jar ATM-0.0.1.jar
         * [Dependencies](#dependencies)
         * [UseCase Diagram](#usecase-diagram)
         * [Class Diagram](#class-diagram) 
-        * [Class Diagram](#class-diagram) 
-
-	* [Sequence Diagram](#sequence-diagram)
+        * [Sequence Diagram](#sequence-diagram)
    *  [Tool Used For Project Management](#tool-used-for-project-management)
 
         
@@ -66,7 +64,7 @@ They are:
 3. Withdraw
 4. Transfer
 
-Project setUp
+Project setup
 ============
 First you’ll need to setup a Java project for Maven to build. 
 
@@ -78,15 +76,15 @@ https://github.com/mallikaravi/ATM/blob/main/design/Bank-ATM-Design.pdf
 
 ### Usecase Diagram: 
 
-https://github.com/mallikaravi/ATM/blob/main/design/Bank-ATM-Design.pdf
+![](design/Usecase-ATM.png)
 
 ### Class Diagram 
 
-https://github.com/mallikaravi/ATM/blob/main/design/Bank-ATM-Design.pdf
+![](design/ClassDiagram-ATM.png)
 
 ### Sequence Diagram 
 
-https://github.com/mallikaravi/ATM/blob/main/design/Bank-ATM-Design.pdf
+![](design/Sequence-ATM.png)
 
 Technology
 ============
