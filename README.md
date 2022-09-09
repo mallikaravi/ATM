@@ -2,7 +2,7 @@
 
 ## Build and Generate the JAR file (compile the source code)
 ```
-#  Git clone (download the soruce code)
+# Git clone (download the soruce code)
 $ git clone https://github.com/mallikaravi/ATM.git
 $ cd ATM
 
@@ -32,9 +32,9 @@ $ java -jar ATM-0.0.1.jar
         * [Dependencies](#dependencies)
         * [UseCase Diagram](#usecase-diagram)
         * [Class Diagram](#class-diagram) 
-	* [Sequence Diagram](#sequence-diagram)
-       
+        * [Class Diagram](#class-diagram) 
 
+	* [Sequence Diagram](#sequence-diagram)
    *  [Tool Used For Project Management](#tool-used-for-project-management)
 
         
