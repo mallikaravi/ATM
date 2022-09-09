@@ -137,11 +137,5 @@ JIRA tool is used for this project, mainly maintaining the recipe-manager applic
 - Sprint handling
 - etc.
 
-### Link to jira
-https://github.com/mallikaravi/ATM/tree/main/design
-
-
-
-
-
-
+### Link to JIRA Activities
+https://github.com/mallikaravi/ATM/blob/main/design/ATM-Jira-dashboard.pdf
