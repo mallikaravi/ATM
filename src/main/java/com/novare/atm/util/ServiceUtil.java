@@ -50,6 +50,13 @@ public class ServiceUtil {
 		return encryptedHash.toString();
 	}
 
+	/**
+	 * THis method is used to check the assets folder.If the name of assset folder
+	 * changes,the program will not execute
+	 * 
+	 * @return
+	 * @throws Exception
+	 */
 	public static boolean checkAssetFolder() throws Exception {
 		if (Files.exists(Paths.get("assets"))) {
 			return true;

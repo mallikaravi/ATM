@@ -86,25 +86,11 @@
   }
 }, {
   "id" : 0,
-  "fullName" : "Jeshitha Ravi",
-  "userName" : "jeshi",
-  "passWord" : "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3",
-  "account" : {
-    "balance" : 1.0,
-    "transactions" : [ {
-      "transactionType" : "DEPOSIT",
-      "amount" : 1.0,
-      "senderName" : "Self",
-      "date" : "07-09-2022 19:50:36"
-    } ]
-  }
-}, {
-  "id" : 0,
   "fullName" : "Kumarbabu Ravi",
   "userName" : "kumar",
   "passWord" : "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3",
   "account" : {
-    "balance" : 4910.0,
+    "balance" : 5010.0,
     "transactions" : [ {
       "transactionType" : "TRANSFER",
       "amount" : 100.0,
@@ -235,15 +221,54 @@
       "amount" : 100.0,
       "senderName" : "Self",
       "date" : "09-09-2022 10:54:08"
+    }, {
+      "transactionType" : "DEPOSIT",
+      "amount" : 100.0,
+      "senderName" : "raji",
+      "date" : "09-09-2022 17:21:42"
     } ]
   }
 }, {
   "id" : 0,
   "fullName" : "Rajesh",
-  "userName" : "raji",
+  "userName" : "rajesh",
+  "passWord" : "03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4",
+  "account" : {
+    "balance" : 700.0,
+    "transactions" : [ {
+      "transactionType" : "TRANSFER",
+      "amount" : 100.0,
+      "senderName" : "kumar",
+      "date" : "09-09-2022 17:21:42"
+    }, {
+      "transactionType" : "DEPOSIT",
+      "amount" : 1000.0,
+      "senderName" : "Self",
+      "date" : "09-09-2022 17:21:19"
+    }, {
+      "transactionType" : "TRANSFER",
+      "amount" : 200.0,
+      "senderName" : "jeshi",
+      "date" : "09-09-2022 20:01:30"
+    } ]
+  }
+}, {
+  "id" : 0,
+  "fullName" : "Jeshitha Ravi",
+  "userName" : "jeshi",
   "passWord" : "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3",
   "account" : {
-    "balance" : 0.0,
-    "transactions" : [ ]
+    "balance" : 201.0,
+    "transactions" : [ {
+      "transactionType" : "DEPOSIT",
+      "amount" : 1.0,
+      "senderName" : "Self",
+      "date" : "07-09-2022 19:50:36"
+    }, {
+      "transactionType" : "DEPOSIT",
+      "amount" : 200.0,
+      "senderName" : "rajesh",
+      "date" : "09-09-2022 20:01:30"
+    } ]
   }
 } ]
