@@ -21,7 +21,7 @@ import org.junit.jupiter.api.TestMethodOrder;
  * 
  */
 @TestMethodOrder(OrderAnnotation.class)
-class TestATMServiceImpl {
+public class TestAccountServiceImpl {
 
 	private static IAccountService accountService;
 
