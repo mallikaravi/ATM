@@ -31,7 +31,9 @@ $ java -jar ATM-0.0.1.jar
       * [Define a simple Maven Build](#define-a-simple-maven-build)
         * [Dependencies](#dependencies)
         * [UseCase Diagram](#usecase-diagram)
-        * [Class Diagram](#class-diagram)       
+        * [Class Diagram](#class-diagram) 
+	* [Sequence Diagram](#Sequence-diagram)       
+
    *  [Tool Used For Project Management](#tool-used-for-project-management)
 
         
