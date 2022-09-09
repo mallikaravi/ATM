@@ -62,7 +62,6 @@ public class WelcomeController extends BaseController {
 			setMenuVisible(false);
 			requestUserInput(context, currentUser);
 		}
-
 	}
 
 	private void login() throws Exception {
@@ -82,6 +81,11 @@ public class WelcomeController extends BaseController {
 
 	}
 
+	/**
+	 * this method is used to create a user by sign up
+	 * 
+	 * @throws Exception
+	 */
 	private void createUser() throws Exception {
 		if (newUser.getFullName() == null) {
 			newUser.setFullName(getView().askUserFullName());

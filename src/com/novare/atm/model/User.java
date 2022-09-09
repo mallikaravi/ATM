@@ -105,12 +105,6 @@ public class User {
 		return this.getUserName().equals(user.getUserName());
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#toString()
-	 */
-
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", fullName=" + fullName + ", userName=" + userName + ", passWord=" + passWord + "]";

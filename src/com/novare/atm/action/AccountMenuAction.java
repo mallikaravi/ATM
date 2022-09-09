@@ -13,7 +13,7 @@ public class AccountMenuAction extends BaseMenuAction {
 		super(context, currentUser);
 		String title = "";
 		switch (context) {
-			case VIEW_BALANCE -> title = "Last 10 Transactions:";
+			case VIEW_BALANCE -> title = " View Balance and Last 10 Transactions:";
 			case WITHDRAW_MONEY -> title = "Withdraw option:";
 			case DEPOSIT_MONEY -> title = "Deposit option:";
 			case TRANSFER_MONEY -> title = "Transfer your money:";

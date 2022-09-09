@@ -56,6 +56,12 @@ public class UserController extends BaseController {
 		}
 	}
 
+	/**
+	 * This method is used to delete our profile in the application
+	 * 
+	 * @return true
+	 * @throws Exception
+	 */
 	private boolean deleteUser() throws Exception {
 		boolean askConfirmation = getView().askUserDeletion();
 		if (askConfirmation) {
@@ -66,6 +72,11 @@ public class UserController extends BaseController {
 		return false;
 	}
 
+	/**
+	 * This method is used to change password
+	 * 
+	 * @throws Exception
+	 */
 	private void changePassword() throws Exception {
 		String askUserPasswordToChange = getView().askUserPassword();
 		if (!askUserPasswordToChange.isEmpty()) {
@@ -76,6 +87,12 @@ public class UserController extends BaseController {
 		getView().waitForDecision();
 	}
 
+	/**
+	 * This method is used to update our profile in the application by changing our
+	 * username and password
+	 * 
+	 * @throws Exception
+	 */
 	private void updateProfile() throws Exception {
 		String askUserNameToChange = getView().askUserName();
 		if (!askUserNameToChange.isEmpty()) {

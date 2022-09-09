@@ -27,12 +27,135 @@
   }
 }, {
   "id" : 0,
+  "fullName" : "Rishitha Ravi",
+  "userName" : "rishi",
+  "passWord" : "e13967ee7f47c70bb8422adfa11ae6dc21abbed437739ca9e154f482edec2308",
+  "account" : {
+    "balance" : 2780.0,
+    "transactions" : [ {
+      "transactionType" : "DEPOSIT",
+      "amount" : 120.0,
+      "senderName" : "kumar",
+      "date" : "07-09-2022 00:00:58"
+    }, {
+      "transactionType" : "DEPOSIT",
+      "amount" : 100.0,
+      "senderName" : "kumar",
+      "date" : "06-09-2022 23:28:58"
+    }, {
+      "transactionType" : "TRANSFER",
+      "amount" : 200.0,
+      "senderName" : "kumar",
+      "date" : "06-09-2022 23:06:00"
+    }, {
+      "transactionType" : "DEPOSIT",
+      "amount" : 2000.0,
+      "senderName" : "kumar",
+      "date" : "06-09-2022 02:00:00"
+    }, {
+      "transactionType" : "DEPOSIT",
+      "amount" : 120.0,
+      "senderName" : "Self",
+      "date" : "07-09-2022 10:33:30"
+    }, {
+      "transactionType" : "DEPOSIT",
+      "amount" : 120.0,
+      "senderName" : "Self",
+      "date" : "07-09-2022 10:44:14"
+    }, {
+      "transactionType" : "DEPOSIT",
+      "amount" : 100.0,
+      "senderName" : "kumar",
+      "date" : "07-09-2022 12:45:12"
+    }, {
+      "transactionType" : "DEPOSIT",
+      "amount" : 200.0,
+      "senderName" : "kumar",
+      "date" : "07-09-2022 13:44:22"
+    }, {
+      "transactionType" : "DEPOSIT",
+      "amount" : 120.0,
+      "senderName" : "kumar",
+      "date" : "07-09-2022 13:49:45"
+    }, {
+      "transactionType" : "DEPOSIT",
+      "amount" : 100.0,
+      "senderName" : "kumar",
+      "date" : "07-09-2022 13:55:27"
+    } ]
+  }
+}, {
+  "id" : 0,
+  "fullName" : "Jeshitha Ravi",
+  "userName" : "jeshi",
+  "passWord" : "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3",
+  "account" : {
+    "balance" : 1.0,
+    "transactions" : [ {
+      "transactionType" : "DEPOSIT",
+      "amount" : 1.0,
+      "senderName" : "Self",
+      "date" : "07-09-2022 19:50:36"
+    } ]
+  }
+}, {
+  "id" : 0,
   "fullName" : "Kumarbabu Ravi",
   "userName" : "kumar",
   "passWord" : "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3",
   "account" : {
-    "balance" : 4810.0,
+    "balance" : 4910.0,
     "transactions" : [ {
+      "transactionType" : "TRANSFER",
+      "amount" : 100.0,
+      "senderName" : "rishi",
+      "date" : "07-09-2022 13:55:27"
+    }, {
+      "transactionType" : "TRANSFER",
+      "amount" : 120.0,
+      "senderName" : "rishi",
+      "date" : "07-09-2022 13:49:45"
+    }, {
+      "transactionType" : "TRANSFER",
+      "amount" : 200.0,
+      "senderName" : "rishi",
+      "date" : "07-09-2022 13:44:22"
+    }, {
+      "transactionType" : "WITHDRAW",
+      "amount" : 200.0,
+      "senderName" : "Self",
+      "date" : "07-09-2022 13:43:13"
+    }, {
+      "transactionType" : "DEPOSIT",
+      "amount" : 1000.0,
+      "senderName" : "Self",
+      "date" : "07-09-2022 13:42:36"
+    }, {
+      "transactionType" : "TRANSFER",
+      "amount" : 100.0,
+      "senderName" : "rishi",
+      "date" : "07-09-2022 12:45:12"
+    }, {
+      "transactionType" : "WITHDRAW",
+      "amount" : 70.0,
+      "senderName" : "Self",
+      "date" : "07-09-2022 12:44:29"
+    }, {
+      "transactionType" : "DEPOSIT",
+      "amount" : 200.0,
+      "senderName" : "Self",
+      "date" : "07-09-2022 12:44:06"
+    }, {
+      "transactionType" : "DEPOSIT",
+      "amount" : 200.0,
+      "senderName" : "Self",
+      "date" : "07-09-2022 11:10:55"
+    }, {
+      "transactionType" : "DEPOSIT",
+      "amount" : 120.0,
+      "senderName" : "Self",
+      "date" : "07-09-2022 10:55:58"
+    }, {
       "transactionType" : "WITHDRAW",
       "amount" : 100.0,
       "senderName" : "Self",
@@ -109,127 +232,18 @@
       "date" : "06-09-2022 02:00:00"
     }, {
       "transactionType" : "DEPOSIT",
-      "amount" : 120.0,
-      "senderName" : "Self",
-      "date" : "07-09-2022 10:55:58"
-    }, {
-      "transactionType" : "DEPOSIT",
-      "amount" : 200.0,
-      "senderName" : "Self",
-      "date" : "07-09-2022 11:10:55"
-    }, {
-      "transactionType" : "DEPOSIT",
-      "amount" : 200.0,
-      "senderName" : "Self",
-      "date" : "07-09-2022 12:44:06"
-    }, {
-      "transactionType" : "WITHDRAW",
-      "amount" : 70.0,
-      "senderName" : "Self",
-      "date" : "07-09-2022 12:44:29"
-    }, {
-      "transactionType" : "TRANSFER",
       "amount" : 100.0,
-      "senderName" : "rishi",
-      "date" : "07-09-2022 12:45:12"
-    }, {
-      "transactionType" : "DEPOSIT",
-      "amount" : 1000.0,
       "senderName" : "Self",
-      "date" : "07-09-2022 13:42:36"
-    }, {
-      "transactionType" : "WITHDRAW",
-      "amount" : 200.0,
-      "senderName" : "Self",
-      "date" : "07-09-2022 13:43:13"
-    }, {
-      "transactionType" : "TRANSFER",
-      "amount" : 200.0,
-      "senderName" : "rishi",
-      "date" : "07-09-2022 13:44:22"
-    }, {
-      "transactionType" : "TRANSFER",
-      "amount" : 120.0,
-      "senderName" : "rishi",
-      "date" : "07-09-2022 13:49:45"
-    }, {
-      "transactionType" : "TRANSFER",
-      "amount" : 100.0,
-      "senderName" : "rishi",
-      "date" : "07-09-2022 13:55:27"
+      "date" : "09-09-2022 10:54:08"
     } ]
   }
 }, {
   "id" : 0,
-  "fullName" : "Rishitha Ravi",
-  "userName" : "rishi",
-  "passWord" : "e13967ee7f47c70bb8422adfa11ae6dc21abbed437739ca9e154f482edec2308",
-  "account" : {
-    "balance" : 2780.0,
-    "transactions" : [ {
-      "transactionType" : "DEPOSIT",
-      "amount" : 120.0,
-      "senderName" : "kumar",
-      "date" : "07-09-2022 00:00:58"
-    }, {
-      "transactionType" : "DEPOSIT",
-      "amount" : 100.0,
-      "senderName" : "kumar",
-      "date" : "06-09-2022 23:28:58"
-    }, {
-      "transactionType" : "TRANSFER",
-      "amount" : 200.0,
-      "senderName" : "kumar",
-      "date" : "06-09-2022 23:06:00"
-    }, {
-      "transactionType" : "DEPOSIT",
-      "amount" : 2000.0,
-      "senderName" : "kumar",
-      "date" : "06-09-2022 02:00:00"
-    }, {
-      "transactionType" : "DEPOSIT",
-      "amount" : 120.0,
-      "senderName" : "Self",
-      "date" : "07-09-2022 10:33:30"
-    }, {
-      "transactionType" : "DEPOSIT",
-      "amount" : 120.0,
-      "senderName" : "Self",
-      "date" : "07-09-2022 10:44:14"
-    }, {
-      "transactionType" : "DEPOSIT",
-      "amount" : 100.0,
-      "senderName" : "kumar",
-      "date" : "07-09-2022 12:45:12"
-    }, {
-      "transactionType" : "DEPOSIT",
-      "amount" : 200.0,
-      "senderName" : "kumar",
-      "date" : "07-09-2022 13:44:22"
-    }, {
-      "transactionType" : "DEPOSIT",
-      "amount" : 120.0,
-      "senderName" : "kumar",
-      "date" : "07-09-2022 13:49:45"
-    }, {
-      "transactionType" : "DEPOSIT",
-      "amount" : 100.0,
-      "senderName" : "kumar",
-      "date" : "07-09-2022 13:55:27"
-    } ]
-  }
-}, {
-  "id" : 0,
-  "fullName" : "Jeshitha Ravi",
-  "userName" : "jeshi",
+  "fullName" : "Rajesh",
+  "userName" : "raji",
   "passWord" : "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3",
   "account" : {
-    "balance" : 1.0,
-    "transactions" : [ {
-      "transactionType" : "DEPOSIT",
-      "amount" : 1.0,
-      "senderName" : "Self",
-      "date" : "07-09-2022 19:50:36"
-    } ]
+    "balance" : 0.0,
+    "transactions" : [ ]
   }
 } ]

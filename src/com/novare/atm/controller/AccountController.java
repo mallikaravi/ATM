@@ -53,6 +53,12 @@ public class AccountController extends BaseController {
 		}
 	}
 
+	/**
+	 * This is the transfer money method which is used to transfer money to the
+	 * sender
+	 * 
+	 * @throws Exception
+	 */
 	private void transferMoney() throws Exception {
 		String senderName = getView().askSenderDetails();
 		User sender = getModel().findByUserName(senderName);
@@ -85,6 +91,11 @@ public class AccountController extends BaseController {
 		getView().waitForDecision();
 	}
 
+	/**
+	 * This method is used to withdraw money from our account
+	 * 
+	 * @throws Exception
+	 */
 	private void withdrawMoney() throws Exception {
 		double withdrawAmount = getView().askWithdrawAmount();
 		Transaction transaction = new Transaction(TransactionType.WITHDRAW, withdrawAmount);
@@ -99,6 +110,11 @@ public class AccountController extends BaseController {
 		getView().waitForDecision();
 	}
 
+	/**
+	 * This method is used to deposit money into our account.
+	 * 
+	 * @throws Exception
+	 */
 	private void depositMoney() throws Exception {
 		double depositAmount = getView().askUserDepositAmount();
 		Transaction transaction = new Transaction(TransactionType.DEPOSIT, depositAmount);
@@ -110,6 +126,11 @@ public class AccountController extends BaseController {
 		getView().waitForDecision();
 	}
 
+	/**
+	 * This is view balance method which is used to view last ten transactions in
+	 * our application
+	 * 
+	 */
 	private void viewBalance() {
 		Account account = getUserSession().getAccount();
 		getView().showBalance(String.format(account.printTransactions(), getUserSession().getFullName()));
