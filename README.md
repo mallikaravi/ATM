@@ -32,7 +32,8 @@ $ java -jar ATM-0.0.1.jar
         * [Dependencies](#dependencies)
         * [UseCase Diagram](#usecase-diagram)
         * [Class Diagram](#class-diagram) 
-	* [Sequence Diagram](#Sequence-diagram)       
+	* [Sequence Diagram](#sequence-diagram)
+       
 
    *  [Tool Used For Project Management](#tool-used-for-project-management)
 
