@@ -5,6 +5,12 @@ import java.util.Date;
 
 import com.novare.atm.util.DateUtil;
 
+/**
+ * This {@code Transaction} is mainly for holding the information about
+ * account.It implements comparable interface because,it provides ordering of
+ * the data for objects of the user defined class.
+ * 
+ */
 public class Transaction implements Comparable<Transaction> {
 	private TransactionType transactionType;
 	private double amount;
