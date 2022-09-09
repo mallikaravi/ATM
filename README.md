@@ -84,6 +84,7 @@ https://github.com/mallikaravi/ATM/blob/main/design/Bank-ATM-Design.pdf
 
 ### Sequence Diagram 
 
+https://github.com/mallikaravi/ATM/blob/main/design/Bank-ATM-Design.pdf
 
 Technology
 ============
@@ -136,7 +137,9 @@ JIRA tool is used for this project, mainly maintaining the recipe-manager applic
 - Sprint handling
 - etc.
 
-### Link 
+### Link to jira
+https://github.com/mallikaravi/ATM/tree/main/design
+
 
 
 
