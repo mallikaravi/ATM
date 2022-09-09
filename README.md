@@ -30,8 +30,9 @@ $ java -jar ATM-0.0.1.jar
    * [Implementation And Design](#implementation-and-design)
       * [Define a simple Maven Build](#define-a-simple-maven-build)
         * [Dependencies](#dependencies)
-        * [Class Diagram](#class-diagram)
         * [UseCase Diagram](#usecase-diagram)
+	* [Class Diagram](#class-diagram)
+        * [Sequence Diagram](#sequence-diagram)
    *  [Tool Used For Project Management](#tool-used-for-project-management)
 
         
@@ -80,6 +81,9 @@ https://github.com/mallikaravi/ATM/blob/main/design/Bank-ATM-Design.pdf
 ### Class Diagram 
 
 https://github.com/mallikaravi/ATM/blob/main/design/Bank-ATM-Design.pdf
+
+### Sequence Diagram 
+
 
 Technology
 ============
