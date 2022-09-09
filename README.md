@@ -34,6 +34,7 @@ $ java -jar ATM-0.0.1.jar
         * [Class Diagram](#class-diagram) 
         * [Sequence Diagram](#sequence-diagram)
    *  [Tool Used For Project Management](#tool-used-for-project-management)
+   *  [Future Enhancement](#future-enhancement)
 
         
 <!--te-->
@@ -137,3 +138,9 @@ JIRA tool is used for this project, mainly maintaining the recipe-manager applic
 
 ### Link to JIRA Activities
 https://github.com/mallikaravi/ATM/blob/main/design/ATM-Jira-dashboard.pdf
+
+Future Enhancement
+============
+*The application handles any exception in a clean way (using exception classes and not only conditional statements) and prints out an error-message telling the user what the problem is,without ending or crashing the app.
+*Include some unit test cases.
+
