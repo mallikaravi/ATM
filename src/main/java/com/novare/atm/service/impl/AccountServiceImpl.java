@@ -6,7 +6,7 @@ import com.novare.atm.model.User;
 import com.novare.atm.service.IAccountService;
 import com.novare.atm.util.MenuContext;
 
-public class AccountServiceImpl extends UserServiceImpl implements IAccountService {
+public class AccountServiceImpl extends BaseServiceImpl implements IAccountService {
 
 	@Override
 	public void handleOption(int selectedOption, User currentUser) throws Exception {
