@@ -141,6 +141,7 @@ https://github.com/mallikaravi/ATM/blob/main/design/ATM-Jira-dashboard.pdf
 
 Future Enhancement
 ============
-*The application handles any exception in a clean way (using exception classes and not only conditional statements) and prints out an error-message telling the user what the problem is,without ending or crashing the app.
-*Include some unit test cases.
+* The application handles any exception in a clean way (using exception classes and not only conditional statements) and prints out an error-message telling the user what the problem is,without ending or crashing the app.
+
+* Include some unit test cases.
 
