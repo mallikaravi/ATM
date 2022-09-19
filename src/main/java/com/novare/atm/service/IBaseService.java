@@ -2,6 +2,7 @@ package com.novare.atm.service;
 
 import com.novare.atm.model.User;
 
+// Good
 public interface IBaseService {
 
 	void handleOption(int selectedOption, User currentUser) throws Exception;

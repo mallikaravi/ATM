@@ -19,73 +19,43 @@ public class User {
 		this.userName = userName;
 		this.passWord = passWord;
 	}
-
-	/**
-	 * @return the id
-	 */
+	
 	public int getId() {
 		return id;
 	}
 
-	/**
-	 * @param id the id to set
-	 */
 	public void setId(int id) {
 		this.id = id;
 	}
 
-	/**
-	 * @return the fullName
-	 */
 	public String getFullName() {
 		return fullName;
 	}
 
-	/**
-	 * @param fullName the fullName to set
-	 */
 	public void setFullName(String fullName) {
 		this.fullName = fullName;
 	}
 
-	/**
-	 * @return the userName
-	 */
 	public String getUserName() {
 		return userName;
 	}
 
-	/**
-	 * @param userName the userName to set
-	 */
 	public void setUserName(String userName) {
 		this.userName = userName;
 	}
 
-	/**
-	 * @return the passWord
-	 */
 	public String getPassWord() {
 		return passWord;
 	}
 
-	/**
-	 * @param passWord the passWord to set
-	 */
 	public void setPassWord(String passWord) {
 		this.passWord = passWord;
 	}
 
-	/**
-	 * @return the account
-	 */
 	public Account getAccount() {
 		return account;
 	}
 
-	/**
-	 * @param account the account to set
-	 */
 	public void setAccount(Account account) {
 		this.account = account;
 	}

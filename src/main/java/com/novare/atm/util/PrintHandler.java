@@ -28,6 +28,7 @@ public class PrintHandler {
 		System.out.println("[0] Back");
 	}
 
+	// This should only work with List<String> because is easy to pass any other kind of list that can crash the app
 	public static void optionList(List<?> options) {
 		for (int index = 0; index < options.size(); index++) {
 			int number = index + 1;
@@ -37,6 +38,7 @@ public class PrintHandler {
 		}
 	}
 
+	// Unused code -1
 	public static void optionListWithoutIndex(List<?> options) {
 		for (Object label : options) {
 			System.out.println(label.toString());
@@ -59,7 +61,6 @@ public class PrintHandler {
 	/**
 	 * Method to clear screen in the terminal.I have written a condition to clear
 	 * the screen in all the operating systems.
-	 * 
 	 */
 	public static void clearScreen() {
 
@@ -83,6 +84,7 @@ public class PrintHandler {
 	 * 
 	 * @param userInput, user entered value in the terminal @return, integer value
 	 */
+	// Code never used -1
 	public static int readInput(String userInput) {
 		try {
 			return Integer.parseInt(userInput);

@@ -19,6 +19,7 @@ public class AccountMenuAction extends BaseMenuAction {
 			case TRANSFER_MONEY -> title = "Transfer your money:";
 			default -> title = "Transaction Menu Options:";
 		}
+
 		AccountView view = new AccountView(title);
 		IAccountService model = new AccountServiceImpl();
 		AccountController controller = new AccountController(model, view);

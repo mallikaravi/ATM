@@ -11,10 +11,14 @@ import com.novare.atm.util.MenuContext;
  * @author malli
  *
  */
+
+
 public class ATMApp {
 
 	public static void main(String[] args) throws IOException {
+		// This value is always null, then why send it to WelcomeMenuAction
 		User currentUser = null;
+
 		try {
 			new WelcomeMenuAction(MenuContext.WELCOME, currentUser);
 		} catch (Exception e) {

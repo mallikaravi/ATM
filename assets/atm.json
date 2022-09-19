@@ -295,4 +295,56 @@
       "date" : "12-09-2022 10:28:01"
     } ]
   }
+}, {
+  "id" : 0,
+  "fullName" : "Eduardo Alvarez",
+  "userName" : "elalien",
+  "passWord" : "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f",
+  "account" : {
+    "balance" : 1000.0,
+    "transactions" : [ {
+      "transactionType" : "DEPOSIT",
+      "amount" : 500.0,
+      "senderName" : "Self",
+      "date" : "19-09-2022 16:20:58"
+    }, {
+      "transactionType" : "DEPOSIT",
+      "amount" : 1000.0,
+      "senderName" : "Self",
+      "date" : "19-09-2022 16:18:27"
+    }, {
+      "transactionType" : "DEPOSIT",
+      "amount" : 1000.0,
+      "senderName" : "Self",
+      "date" : "19-09-2022 16:18:15"
+    }, {
+      "transactionType" : "TRANSFER",
+      "amount" : 1500.0,
+      "senderName" : "Jhonson",
+      "date" : "19-09-2022 16:21:17"
+    } ]
+  }
+}, {
+  "id" : 0,
+  "fullName" : "Carl",
+  "userName" : "carlideer",
+  "passWord" : "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f",
+  "account" : {
+    "balance" : 1500.0,
+    "transactions" : [ {
+      "transactionType" : "DEPOSIT",
+      "amount" : 1500.0,
+      "senderName" : "elalien",
+      "date" : "19-09-2022 16:21:17"
+    } ]
+  }
+}, {
+  "id" : 0,
+  "fullName" : "Aristi Kusonavi",
+  "userName" : "",
+  "passWord" : "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f",
+  "account" : {
+    "balance" : 0.0,
+    "transactions" : [ ]
+  }
 } ]

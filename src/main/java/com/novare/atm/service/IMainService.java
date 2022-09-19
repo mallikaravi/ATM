@@ -6,6 +6,8 @@ package com.novare.atm.service;
  * have additional information about the object
  * 
  */
+// This compleement the comment on IAccountService. If there any data or functions, then what stops me as another developer
+// to enter your code and swith an object form IBaseService to IAccountService and viceversa, as they dont have any validation.
 public interface IMainService extends IBaseService {
 
 }

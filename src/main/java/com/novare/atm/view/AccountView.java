@@ -23,6 +23,7 @@ public class AccountView extends BaseView {
 
 	public double askUserDepositAmount() {
 		printMessage("Please Enter the amount you want to deposit: ");
+
 		try {
 			return getUserEnteredAmount();
 		} catch (Exception exception) {
@@ -72,6 +73,7 @@ public class AccountView extends BaseView {
 		}
 		return amount;
 	}
+
 	public void printDepositSuccessMessage() {
 		printMessage("Successfully Deposited!");
 	}

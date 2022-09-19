@@ -9,7 +9,6 @@ public class MainView extends BaseView {
 	public MainView(String title) {
 		super(title);
 	}
-	
 
 	@Override
 	public List<String> getMenuOptions() {
@@ -19,8 +18,6 @@ public class MainView extends BaseView {
 	public void printNavigationMenu() {
 		PrintHandler.optionLogout();
 	}
-	
-
 }
 
 
