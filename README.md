@@ -49,7 +49,7 @@ Prerequisites
 
 About
 ============
-ATM is a terminal based application.The user should first login in to the application and the use the bank services.If the user is not a registered member,he can create an account by signingup.The user has also option to change his profile.They are
+ATM is a terminal based application.The user should first login in to the application and then uses the bank services.If the user is not a registered member,he can create an account by signingup.The user has also option to change his profile.They are
 
 
 1. Edit Profile
